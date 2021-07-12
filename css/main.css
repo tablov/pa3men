@@ -1,0 +1,571 @@
+/* 
+Цвета:
+#4e257b = king;
+#8b238c = queen;
+#9f1a72 = knight;
+#b21750 = rook;
+#faeef4 = background; 
+*/
+
+
+/*general*/
+*,*:before,*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Karla', Arial, sans-serif;	
+	min-width: 320px;
+	height: 100%;
+	background: url('../img/chess_background.jpg') left top repeat;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	opacity: 0.99;
+}
+
+.container { 
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+
+
+/*header*/
+header {
+	position: relative;
+	height: 100%;
+}
+
+.header-top {
+	display: flex;
+	padding: 15px 20px;
+	justify-content:space-around;
+	align-items: center;
+	background: #000;
+	font: 500 20px 'Karla', Arial, sans-serif;
+	letter-spacing: 1px;
+	color: #9f1a72;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+#your-city span {
+	margin: 0;
+	cursor: pointer;
+}
+
+#phone {
+	color: #b21750;
+}
+
+.social a {
+	color: #000
+}
+
+.header-main {
+	background: #4e257b;
+	color: #000;
+	border-bottom: 1px solid #666;
+	opacity: 0.97;
+}
+
+.header-main .container {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 200px;
+	align-items: center;
+}
+
+.logo {
+	flex: 0 0 180px;
+	border-radius: 50%:
+}
+
+.logo img {
+	max-width: 100%;
+	display: block;
+	cursor: pointer;
+	//transform: scale(-1, 1);
+	//border: 2px solid #666;
+	//padding: 10px;
+}
+
+.logo:hover img {
+	max-width: 100%;
+	display: block;
+	cursor: pointer;
+	transform: scale(-1, 1);
+	//border: 2px solid #666;
+}
+
+.brandname {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.name {
+	text-align: center;
+	font: normal 700 66px 'Karla', Arial, sans-serif;
+	color: #000;
+	margin: 0px 20px;
+	letter-spacing: 32px;
+	text-transform: uppercase;
+}
+
+.motto {
+	text-align: center;
+	font: small-caps 600 18px 'Karla', Arial, sans-serif;
+	letter-spacing: 3px;
+	color: #000;
+}
+
+.buttons-left, .buttons-main, .buttons-right, .buttons-garbage, .buttons-curr {
+	margin-left: 10px;
+	font: normal 700 20px 'Karla', Arial, sans-serif;
+}
+
+#login, #find, #logout {
+	width: 155px;
+	height: 40px;
+	background: #000;
+	color: #666;
+	font: normal 500 24px 'Karla', Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 10px;
+	letter-spacing: 10px;
+	margin: 5px;
+	border: 2px solid #666;
+}
+
+#men, #female {
+	width: 55px;
+	height: 55px;
+	background: #000;
+	color: #666;
+	font: normal 400 28px 'Karla', Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 100%;
+	margin: 10px;
+	border: 2px solid #666;
+}
+
+#rur, #usd, #eur, #btc {
+	width: 40px;
+	height: 40px;
+	background: #4e257b;
+	color: #8b238c;
+	font: normal 500 26px 'Karla', Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 25%;
+	margin: 5px 25px;
+	border: 2px solid #8b238c;
+}
+
+#hell, #paradise {
+	width: 190px;
+	height: 50px;
+	background: #000;
+	color: #666;
+	font: small-caps 400 20px 'Karla', Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 25px;
+	letter-spacing: 3px;
+	margin: 5px;
+	border: 2px solid #666;
+}
+
+//#test {
+	width: 55px;
+	height: 55px;
+	background: black;
+	color: white;
+	font: normal 400 14px 'Karla', Arial, sans-serif;
+	cursor: pointer;
+	border-radius: 100%;
+	margin: 5px;
+	border: 2px solid red;
+}
+
+#find:hover {
+	color: yellow;
+	background: #4e257b; 
+	font: normal 500 24px 'Karla', Arial, sans-serif;
+	//box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+	border: 2px solid #4e257b;
+}
+	
+#login:hover { 
+	color: green;
+	background: #ffe09d;
+	font: normal 500 24px 'Karla', Arial, sans-serif;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+	border: 2px solid green;
+}
+
+#logout:hover {
+	color: #4e257b;
+	background: #8b238c;
+	font: normal 500 24px 'Karla', Arial, sans-serif;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+	border: 4px double red;
+}
+
+#men:hover {
+	color: #000;
+	background: steelblue;
+	font: normal 700 36px 'Karla', Arial, sans-serif;
+	box-shadow: 7px 7px 7px rgba(0,0,0,.5);
+	border: 4px solid #000;
+}
+
+#female:hover {
+	color: #000;
+	background: crimson;
+	font: normal 700 36px 'Karla', Arial, sans-serif;
+	box-shadow: 7px 7px 7px rgba(0,0,0,.5);
+	border: 4px solid #000;
+}
+
+#hell:hover {
+	color: #4e257b;
+	background: #4e257b;
+	border: 2px solid #4e257b;
+}
+
+#paradise:hover {
+	color: yellow;
+	background: red;
+	box-shadow: 5px 15px 10px rgba(37,1,37,.5);
+	border: 2px solid red;
+}
+
+#garbage {
+	width: 100px;
+	height: 100px;
+	background: #000;
+	color: #666;
+	font: inherit;
+	cursor: pointer;
+	border-radius: 100%;
+	margin: 10px;
+	border: 3px solid #8b238c;
+}
+
+#garbage:hover {
+	width: 180px;
+	height: 180px;
+	background: url('../img/chess_background-c.jpg') left top repeat;
+	opacity: .5;
+	color: #000;
+	border-radius: 100%;
+	box-shadow: 30px 20px 10px rgba(37,1,37,.5);
+	margin: 10px;
+	border: 2px dotted crimson;
+}
+
+#rur:hover {
+	background: darkred;
+	color: #000;
+	font-weight: 700;
+	border: 3px solid #000;
+}
+
+#btc:hover {
+	background: gold;
+	color: #000;
+	font-weight: 700;
+	border: 3px solid #000;
+}
+
+#usd:hover {
+	background: darkgreen;
+	color: #000;
+	font-weight: 700;
+	border: 3px solid #000;
+}
+
+#eur:hover {
+	background: darkblue;
+	color: #000;
+	font-weight: 700;
+	border: 3px solid #000;
+}
+
+.header-bottom {
+	display: flex;
+	background: #8b238c;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid #666;
+}
+
+.topmenu {
+	text-align: center;
+}
+
+.topmenu a {
+	text-decoration: none;
+	padding: 10px;
+	white-space: nowrap;
+}
+
+.line-point {
+	font: small-caps 600 22px 'Karla', Arial, sans-serif;
+	color: #4e257b;
+	letter-spacing: 3px;
+	//text-transform: uppercase;
+}
+
+.pulldown-point {
+	font: small-caps 500 18px 'Karla', Arial, sans-serif;
+	color: #000;
+	background: #4e257b;
+	border: 1px solid #000;
+	display: block;
+}
+
+.menu-point {
+	display: inline-block;
+	position: relative;
+	margin: 10px 10px;
+	border: 6px double #8b238c;
+	border-radius: 15px;
+	width: 225px;
+}
+
+.menu-point > span {
+	display: none;
+	position: absolute;
+	top: calc(100% + 8px);
+	padding: 10px;
+	box-shadow: 7px 7px 7px rgba(0,0,0,.5);
+	background: #000;
+	opacity: 97%;
+	border: 6px double #b21750;
+	border-radius: 15px;
+}
+
+.menu-point:hover > span,
+.menu-point > span:hover {
+	display: block;
+}
+
+.menu-point:hover {
+	border-color: #4e257b;
+	background: #4e257b;
+	z-index: 3;
+}
+
+.menu-point:hover .line-point {
+	color: #b21750;
+}
+
+.pulldown-point:hover {
+	color: #b21750;
+	text-decoration: 2px solid line-through;
+	text-decoration-color: #000;
+}
+
+
+
+/* main */
+main {
+	position: relative;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+main.container {
+	background: linear-gradient(to top, #666 10%, #faeef4 100%);
+}
+
+h1, h2, h3 {
+	text-align: center;
+	font: small-caps 500 20px/30px 'Karla', Arial, sans-serif;
+	letter-spacing: 3px;
+}
+
+#romans {
+	font: 500 20px/30px 'Karla', Arial, sans-serif;
+	text-align: justify;
+	margin: 30px;
+	letter-spacing: 0.5px;
+}
+
+.chess-card {
+	text-align: center;
+}
+
+
+
+/*slider*/
+#carouselExampleIndicators {
+	position: relative;
+	margin: auto;
+	max-width: 900px;
+}
+
+
+
+/* footer */
+footer {
+	flex: 0 0 auto;
+}
+
+.footer-top {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+	align-items: center;
+	height: 50px;
+	width: 100%;
+	background-color: #8b238c;
+	text-align: center;
+	font: 500 20px 'Karla', Arial, sans-serif;
+	color: #000;
+	letter-spacing: 2px;
+	border-top: 1px solid #666;
+}
+
+.footer-main {
+	height: 170px;
+	padding-top: 20px;
+	background-color: #4e257b;
+	font: 500 18px 'Karla', Arial, sans-serif;
+	color: #000;
+	border-top: 1px solid #666;
+	opacity: 0.97;
+}
+
+.subscrition-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.text h3 {
+	font: small-caps 700 28px 'Karla', Arial, sans-serif;
+	letter-spacing: 10px;
+}
+
+.text p {
+	font: small-caps 500 16px 'Karla', Arial, sans-serif;
+	letter-spacing: 1px;
+}
+	
+.form p {
+	font-size: 20px;
+	padding-top: 15px;
+	font: small-caps 500 24px 'Karla', Arial, sans-serif;
+	
+}
+.form-button {
+	width: 130px;
+	height: 30px;
+	background-color: #666;
+	border: 1px solid #666;
+	border-radius: 10px;
+	font-size: 18px;
+	color: #000;
+	cursor: pointer;
+}
+
+.form-button:hover {
+	background-color: #9f1a72;
+	border: 2px solid #000;
+	font-weight: bold;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	background-color: #000;
+	font: 700 12px 'Karla', Arial, sans-serif;
+	color: #666;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+	letter-spacing: 1px;
+}
+
+
+
+/* popup */
+.popup-desk {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.3);
+}
+.div-popup {
+	position: absolute;
+	left: calc(50% - 150px);
+	top: 300px;
+	width: 450px;
+	border-radius: 20px;
+	padding: 30px;
+	box-sizing: border-box;
+	color: #FFD700;
+	background-color: rgba(47, 79, 79, .9);
+	text-align: center;
+}
+.popup-desk.active {
+	display: block;
+	z-index: 4;
+}
+.div-popup p {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+.div-popup input {
+	width: 400px;
+	height: 50px;
+	background-color: #F5F5DC;
+	border-radius: 10px;
+	border: 2px solid #FFD700;
+	box-sizing: border-box;
+	font-size: 18px;
+	color: #2F4F4F;
+	margin-bottom: 20px;
+}
+.div-popup button, .div-popup a {
+	background-color: #7FFFD4;
+	border: 2px solid #7FFFD4;
+
+}
+.div-popup a {
+	border: 12px solid #7FFFD4;
+}
+.div-popup a:hover {
+	border: 12px solid #FFFF00;
+}
